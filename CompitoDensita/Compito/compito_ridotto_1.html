@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+
+<head>
+  <title>Verifica di Fisica: formule inverse e densità</title>
+</head>
+
+
+
+
+<style>
+	body{
+		background-color: FloralWhite;
+	}
+
+	input[type="text"], input[type="number"]{
+    		background-color: FlorealWhite;
+	}
+
+	.fraction, .top, .bottom {
+		padding: 0 5px;    
+	}
+
+	.fraction {
+		display: inline-block;
+		text-align: center;    
+	}
+
+	.bottom{
+		border-top: 1px solid #000;
+		display: block;
+	}
+
+	.boxed {
+		border: 1px solid green ;
+	}
+
+	.FinalResult {
+    		background-color: SeaShell;
+    		/*width: 300px;*/
+    		border: 3px solid Salmon;
+    		padding: 5px;
+    		/*margin: 25px;*/
+	}
+</style>
+
+
+
+
+
+<script>
+	window.onbeforeunload = function () {
+		return "Sei sicuro di voler uscire?";
+	}
+</script>
+
+<script src="../../jsLibraries/MathUtilitiesLibrary.js"></script>
+<script src="../../jsLibraries/AssignLibrary.js"></script>
+<script src="../../jsLibraries/VerifyLibrary.js"></script>
+<!--<script src="jsLibraries/math.js"></script>-->
+<script src="js/AssignVerify_ridotto.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+
+
+
+</head>
+
+
+
+
+
+<!--
+
+############# NOTE: #############
+
+- SONO QUI: Se scommento la funzione verifyInvFormula4 in AssignVerifyLibrary non funziona più nulla.
+
+-->
+
+
+
+
+
+
+
+<body>
+
+	<h1 style="text-align:center;float:center;">Verifica di Fisica: formule inverse e densità</h1>
+	<h3 style="text-align:center;float:center;">prof. Asti</h3>
+	<hr style="clear:both;"/>
+
+
+	
+	<table width=100% height=100%>
+
+		<tr>
+			<td width=50%>
+
+				<!--	
+				###########################		
+				########## DATA ###########
+				###########################
+				-->
+				<p>
+					Data: <a id="date"></a>
+				</p>
+
+
+
+
+				<!--	
+				###########################		
+				###### NOME E COGNOME #####
+				###########################
+				-->
+				<p>
+					Nome:<input type="text" id="nome_input">
+				<!--	<span style="display:inline-block; width:10px;"></span>-->
+				</p>
+				<p>				
+					Cognome: <input type="text" id="cognome_input">
+				<!--	<span style="display:inline-block; width:10px;"></span>-->
+				</p>
+				<p>
+					Classe: <input type="text" id="classe_input">
+				</p>				
+				<!--
+				<br>
+				<a id="nome_disp"></a> <a id="cognome_disp"></a>	
+				<br>
+				<p id="nome_disp"></p>
+				-->	
+	
+
+
+				<!--	
+				###########################		
+				######## PUNTEGGIO ########
+				###########################
+				-->
+				<h3>	
+					<span class="FinalResult">
+						Punteggio:
+						<a id="pointsTotRealized">...</a> / <a id="pointsTotAvail">...</a>
+					</span>
+				</h3>
+	
+				<span id="criptoRand"></span>
+				<span>     </span>
+				<span id="cripto"></span>
+				<br>
+
+			</td>
+
+			<td width=50%>
+				<!--	
+				###########################		
+				######### COMMENTI ########
+				###########################
+				-->
+				<p>
+					Commenti:
+					<br>
+					<textarea rows="12" cols="50"></textarea>	
+				</p>			
+			</td>
+		</tr>
+	</table>
+
+
+	
+
+
+	
+
+
+
+	<hr style="clear:both;"/>
+
+
+
+
+
+
+	<!--	
+	###########################		
+	####### INTESTAZIONE ######
+	###########################
+	-->
+	<p>
+		Risolvere i seguenti esercizi completando le caselle con lettere e numeri. 
+		<br>
+		Usare i seguenti simboli <u>stando attenti a maiuscole e minuscole</u>: massa: m; volume: V; densità: d.
+		<br>
+		E' consentito l'uso della calcolatrice.
+	</p>
+
+
+
+
+
+
+
+	<!--	
+	###########################		
+	########## ES. 1 ########## 
+	### DENSITA: massa, S.I. ##
+	###########################
+	-->
+	<br>	
+	<h2> Esercizio 1: </h2>	
+
+	<b style="color:#800000;"> Punti disponibili: <a id="pointsAvail_es1">6</a> </b>	
+	<br>
+	<b style="color:#800000;"> Punti totalizzati: <a id="points_es1"></a> </b>	
+
+	<p>
+		Un oggetto in <a id="material_es1_1" type="text">MATERIALE</a> occupa un volume di <a id="V_es1" type="number">0</a> m<sup>3</sup>. Quanto vale la sua massa? Ricordiamo che la densità del <a id="material_es1_2" type="text">MATERIALE</a> è di <a id="d_es1" type="number">0</a> kg/m<sup>3</sup>.
+	</p>
+	<input id="ansLet_es1" type="text" size=2 style="text-align:right;">
+	=
+	<sub>
+	<span class="fraction">
+				<input id="ansLetNum_es1" type="text" size=5 style="text-align:left;">
+				FracLine
+				<input id="ansLetDen_es1" type="text" size=5 style="text-align:left;">
+	</span>
+	</sub>
+	=
+	<input id="ansNum_es1" type="number" size=10 style="text-align:right;">
+	kg
+	=
+	<input id="ansA_es1" type="number" size=10 style="text-align:right;">
+	&middot 10
+	<sup><input id="ansK_es1" type="number"size=3></sup>
+	kg.
+
+	<br>
+	<span id="result_es1"></span>
+
+
+
+
+
+
+	<!--	
+	###########################		
+	########## ES. 2 ########## 
+	## DENSITA: massa, unità ##
+	###########################
+	-->
+	<br>	
+	<h2> Esercizio 2: </h2>	
+
+	<b style="color:#800000;"> Punti disponibili: <a id="pointsAvail_es2">10</a> </b>	
+	<br>
+	<b style="color:#800000;"> Punti totalizzati: <a id="points_es2"></a> </b>	
+
+	<p>
+		Un oggetto in <a id="material_es2_1" type="text">MATERIALE</a> occupa un volume di <a id="V_es2" type="number">0</a> cm<sup>3</sup>. Quanto vale la sua massa? Ricordiamo che la densità del <a id="material_es2_2" type="text">MATERIALE</a> è di <a id="d_es2" type="number">0</a> kg/m<sup>3</sup>.
+	</p>
+	<input id="ansLet_es2" type="text" size=2 style="text-align:right;">
+	=
+	<sub>
+	<span class="fraction">
+				<input id="ansLetNum_es2" type="text" size=5 style="text-align:left;">
+				FracLine
+				<input id="ansLetDen_es2" type="text" size=5 style="text-align:left;">
+	</span>
+	</sub>
+	=
+	<input id="ansNumKg_es2" type="number" size=10 style="text-align:right;">
+	kg
+	=
+	<input id="ansA_es2" type="number" size=10 style="text-align:right;">
+	&middot 10
+	<sup><input id="ansK_es2" type="number"size=3></sup>
+	kg
+	=
+	<input id="ansNumG_es2" type="number" size=10 style="text-align:right;">
+	g.
+
+	<br>
+	<span id="result_es2"></span>
+	
+	
+
+
+
+	<!--	
+	###########################		
+	########## ES. 3 ########## 
+	## DENSITA: volume, S.I. ##
+	###########################
+	-->
+	<br>	
+	<h2> Esercizio 3: </h2>	
+
+	<b style="color:#800000;"> Punti disponibili: <a id="pointsAvail_es3">6</a> </b>	
+	<br>
+	<b style="color:#800000;"> Punti totalizzati: <a id="points_es3"></a> </b>	
+
+	<p>
+		Un oggetto in <a id="material_es3_1" type="text">MATERIALE</a> ha una massa di <a id="m_es3" type="number">0</a> kg. Quanto volume occupa? Ricordiamo che la densità del <a id="material_es3_2" type="text">MATERIALE</a> è di <a id="d_es3" type="number">0</a> kg/m<sup>3</sup>.
+	</p>
+	<input id="ansLet_es3" type="text" size=2 style="text-align:right;">
+	=
+	<sub>
+	<span class="fraction">
+				<input id="ansLetNum_es3" type="text" size=5 style="text-align:left;">
+				FracLine
+				<input id="ansLetDen_es3" type="text" size=5 style="text-align:left;">
+	</span>
+	</sub>
+	=
+	<input id="ansNum_es3" type="number" size=10 style="text-align:right;">
+	m<sup>3</sup>
+	=
+	<input id="ansA_es3" type="number" size=10 style="text-align:right;">
+	&middot 10
+	<sup><input id="ansK_es3" type="number"size=3></sup>
+	m<sup>3</sup>.
+
+	<br>
+	<span id="result_es3"></span>
+
+
+
+
+
+
+	<!--	
+
+	
+
+
+	<!--	
+	###########################		
+	########## ES. 5 ########## 
+	##### FORMULA INVERSA #####
+	###########################
+	-->
+	<br>	
+	<h2> Esercizio 5: </h2>	
+
+	<b style="color:#800000;"> Punti disponibili: <a id="pointsAvail_es5">8</a> </b>	
+	<br>
+	<b style="color:#800000;"> Punti totalizzati: <a id="points_es5"></a> </b>	
+
+	<p>
+		Si prenda in considerazione la seguente formula:
+	</p>
+	
+	<sub><span class="fraction">
+		<a id="NumSx_1" type="text"></a>
+		FracLine
+		<a id="DenSx_1" type="text"></a>
+	</span></sub>
+	<sup>=</sup>
+	<sub><span class="fraction">
+		<a id="NumDx_1" type="text"></a>
+		FracLine
+		<a id="DenDx_1" type="text"></a>
+	</span></sub>
+
+	<p>
+		Si scrivano le seguenti formule inverse:
+	</p>
+	
+	<sup>
+		<a id="NumSx_2" type="text"></a>
+		=
+	</sup>
+	<sub>
+		<span class="fraction">
+			<input id="result_0_Num" type="text" size=5 style="text-align:left;">
+			FracLine
+			<input id="result_0_Den" type="text" size=5 style="text-align:left;">
+		</span>
+	</sub>
+
+	<span style="display:inline-block; width: 30px;"></span>
+
+	<sup>
+		<a id="DenSx_2" type="text"></a>
+		=
+	</sup>
+	<sub>
+		<span class="fraction">
+			<input id="result_1_Num" type="text" size=5 style="text-align:left;">
+			FracLine
+			<input id="result_1_Den" type="text" size=5 style="text-align:left;">
+		</span>		
+	</sub>
+
+	<span style="display:inline-block; width: 30px;"></span>
+
+	<sup>
+		<a id="NumDx_2" type="text"></a>
+		=
+	</sup>
+	<sub>
+		<span class="fraction">
+			<input id="result_2_Num" type="text" size=5 style="text-align:left;">
+			FracLine
+			<input id="result_2_Den" type="text" size=5 style="text-align:left;">
+		</span>		
+	</sub>
+
+	<span style="display:inline-block; width: 30px;"></span>
+
+	<sup>
+		<a id="DenDx_2" type="text"></a>
+		=
+	</sup>
+	<sub>
+		<span class="fraction">
+			<input id="result_3_Num" type="text" size=5 style="text-align:left;">
+			FracLine
+			<input id="result_3_Den" type="text" size=5 style="text-align:left;">
+		</span>		
+	</sub>
+
+	<br><br>
+	<span id="result_es5"></span>
+
+
+
+
+
+
+
+
+
+
+
+	<!--	
+	###########################		
+	########## ES. 6 ########## 
+	# DENSITA: volume, unità ##
+	###########################
+	-->
+	<br>	
+	<h2> Esercizio 6: </h2>	
+
+	<b style="color:#800000;"> Punti disponibili: <a id="pointsAvail_es6">4</a> </b>	
+	<br>
+	<b style="color:#800000;"> Punti totalizzati: <a id="points_es6"></a> </b>	
+
+	<p>
+		Un oggetto in <a id="material_es6_1" type="text">MATERIALE</a> ha forma cilindrica e raggio dell'area di base che misura <a id="r_es6" type="number">0</a> mm. La sua massa vale <a id="m_es6" type="number">0</a> g. Quanto misura l'altezza cilindro? Ricordiamo che la densità del <a id="material_es6_2" type="text">MATERIALE</a> è di <a id="d_es6" type="number">0</a> kg/m<sup>3</sup>.
+	</p>
+
+	r =
+	<input id="ans_hMM_es6" type="number" size=10 style="text-align:right;">
+	mm.
+
+	<br><br>
+	<span id="result_es6"></span>
+
+
+
+
+
+
+
+
+
+
+
+	<!--	
+	###########################		
+	##### BOTTONE CONSEGNA ####
+	###########################
+	-->
+	<br>
+	<br>
+	<button type="button" onclick="a = alertConsegna(); if(a) this.disabled=true;">Consegna compito</button>
+	<!-- <button type="button" onclick="alertConsegna();">Consegna compito</button> -->
+
+
+
+	
+
+
+
+
+
+
+
+
+
+	<!-- NON RIESCO PIU' A PRENDERE ELEMENTI DALLA PAGINA!!! NON FUNZIONA QUI SOTTO! 
+	<script>
+		document.writeln("ciao");
+		prova = document.getElementById("weight_es1").innerHTML;
+		document.writeln("boh");
+		documents.writeln(prova);
+		document.writeln("swssssss");
+	</script>
+	-->
+
+
+
+
+
+
+
+
+	<script>
+
+		$('.fraction').each(function(key, value) {
+			$this = $(this)
+			var split = $this.html().split("FracLine")
+			if( split.length == 2 ){
+				$this.html('<span class="top">'+split[0]+'</span><span class="bottom">'+split[1]+'</span>')
+			}    
+		});
+
+
+		assignDate();
+
+		assignAll();
+
+	</script>
+
+
+
+
+
+
+</body>
+</html>
