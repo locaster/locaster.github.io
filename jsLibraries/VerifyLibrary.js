@@ -9,7 +9,7 @@ function verifySciNot(id_num,id_a,id_k,id_result,id_weight) {
 	
 	w_text = document.getElementById(id_weight).innerHTML;
 	w = parseInt(w_text, 10);
-		num = document.getElementById(id_num).innerHTML;
+	num = document.getElementById(id_num).innerHTML;
 	a = document.getElementById(id_a).value;
 	k = document.getElementById(id_k).value;
 	

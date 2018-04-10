@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+
+<head>
+  <title>Verifica di Fisica: notazione scientifica, calcoli approssimati ed equivalenze</title>
+</head>
+
+<style>
+.fraction, .top, .bottom {
+    padding: 0 5px;    
+}
+
+.fraction {
+    display: inline-block;
+    text-align: center;    
+}
+
+.bottom{
+    border-top: 1px solid #000;
+    display: block;
+}
+</style>
+
+
+<script src="jsLibraries/MathUtilitiesLibrary.js"></script>
+<script src="jsLibraries/AssignVerifyLibrary.js"></script>
+<!--<script src="jsLibraries/math.js"></script>-->
+<script src="js/AssignVerify.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+
+<body>
+
+<h2>Compito di fisica</h2>
+
+
+<!--
+
+############# NOTE: #############
+
+- DA FARE: Ho provato a far scrivere un file con i risultati banalmente criptati con la funzione writeReportCsv scritta in jsLibraries/AssignVerifyLibrary.js e richiamata in js/AssignVerify.js ma non funziona il get element di nomi e risultati!!!
+
+- MIGLIORIA: Scrivere le frazioni usando Latex all'interno di HTML
+
+-->
+
+
+
+<!-- DATA -->
+<p>
+	Data: <a id="date"></a>
+</p>
+
+
+
+
+
+
+<form id="frm1" action="/action_page.php">
+	<!--	
+		###########################		
+		###### NOME E COGNOME #####
+		###########################
+	-->
+	Nome:<input type="text" id="nome">
+	<br>
+	Cognome: <input type="text" id="cognome">
+	<!--
+	<br>
+	<a id="nome_disp"></a> <a id="cognome_disp"></a>	
+	<br>
+	<p id="nome_disp"></p>
+	-->	
+	
+
+
+
+	<!--	
+		###########################		
+		########## ES. 1 ########## 
+		## NOTAZIONE SCIENTIFICA ##
+		###########################
+	-->
+	<h2> Esercizio 1: </h2>	
+	<p> Scrivere i seguenti numeri in notazione scintifica. </p>	
+	<ol>	
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es1.1">1</a> </b>
+			<br>
+			<a id="num_es1.1" type="number"> 0 </a>
+			=
+			<input id="a_es1.1" type="number" size=10 style="text-align:right;">
+			&middot 10
+			<sup><input id="k_es1.1" type="number"size=3></sup>
+			<br>
+			<a id="result_es1.1"> Risultato... </a>
+		</li>
+		
+		<br>		
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es1.2">1</a> </b>
+			<br>
+			<a id="num_es1.2" type="number"> 0 </a>
+			=
+			<input id="a_es1.2" type="number" size=10 style="text-align:right;">
+			&middot 10
+			<sup><input id="k_es1.2" type="number"size=3></sup>
+			<br>
+			<a id="result_es1.2"> Risultato... </a>
+		</li>
+
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es1.3">1</a> </b>
+			<br>
+			<a id="num_es1.3" type="number"> 0 </a>
+			=
+			<input id="a_es1.3" type="number" size=10 style="text-align:right;">
+			&middot 10
+			<sup><input id="k_es1.3" type="number"size=3></sup>
+			<br>
+			<a id="result_es1.3"> Risultato... </a>	
+		</li>
+		
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es1.4">1</a> </b>
+			<br>
+			<a id="num_es1.4" type="number"> 0 </a>
+			=
+			<input id="a_es1.4" type="number" size=10 style="text-align:right;">
+			&middot 10
+			<sup><input id="k_es1.4" type="number"size=3></sup>
+			<br>
+			<a id="result_es1.4"> Risultato... </a>	
+		</li>
+
+	</ol>
+	
+
+
+
+
+
+
+	<!--	
+		###########################		
+		########## ES. 2 ########## 
+		##### NOTAZIONE COMUNE ####
+		###########################
+	-->
+	<h2> Esercizio 2: </h2>	
+	<p> Scrivere i seguenti numeri in notazione comune. </p>	
+	<ol>	
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es2.1">1</a> </b>
+			<br>
+			<a id="a_es2.1" type="number"> 0 </a>
+			&middot 10
+			<sup><a id="k_es2.1" type="number"> 0 </a></sup>
+			=
+			<input id="x_es2.1" type="number" size=10 style="text-align:left;">
+			<br>
+			<a id="result_es2.1"> Risultato... </a>
+		</li>
+		
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es2.2">1</a> </b>
+			<br>
+			<a id="a_es2.2" type="number"> 0 </a>
+			&middot 10
+			<sup><a id="k_es2.2" type="number"> 0 </a></sup>
+			=
+			<input id="x_es2.2" type="number" size=10 style="text-align:left;">
+			<br>
+			<a id="result_es2.2"> Risultato... </a>
+		</li>
+		
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es2.3">1</a> </b>
+			<br>
+			<a id="a_es2.3" type="number"> 0 </a>
+			&middot 10
+			<sup><a id="k_es2.3" type="number"> 0 </a></sup>
+			=
+			<input id="x_es2.3" type="number" size=10 style="text-align:left;">
+			<br>
+			<a id="result_es2.3"> Risultato... </a>
+		</li>
+
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es2.4">1</a> </b>
+			<br>
+			<a id="a_es2.4" type="number"> 0 </a>
+			&middot 10
+			<sup><a id="k_es2.4" type="number"> 0 </a></sup>
+			=
+			<input id="x_es2.4" type="number" size=10 style="text-align:left;">
+			<br>
+			<a id="result_es2.4"> Risultato... </a>
+		</li>
+
+
+	</ol>
+
+
+
+
+
+
+	
+	<!--	
+		###########################		
+		########## ES. 3 ########## 
+		##### APPROSSIMAZIONI #####
+		###########################
+	-->
+	<br>
+	<h2> Esercizio 3: </h2>	
+	<p> Calcolare l'approssimazione a <u>una</u> cifra significativa (espressa in notazione scintifica) e l'ordine di grandezza delle seguenti espressioni numeriche senza ricorrere all'uso della clacolatrice.</p>
+	<p> <u><b>Nota bene:</b></u> Perché l'esercizio sia considerato corretto devono essere riportati i calcoli in bella copia tutti i calcoli. </p>	
+	<ol>	
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es3.1">4</a> </b>
+			<br>
+			<span class="fraction">
+				<a id="n1_es3.1" type="number"> 0 </a>
+				&middot
+				<a id="n2_es3.1" type="number"> 0 </a>
+				FracLine
+				<a id="d1_es3.1" type="number"> 0 </a>
+				&middot
+				<a id="d2_es3.1" type="number"> 0 </a>
+			</span>
+			=
+			<input id="a_es3.1" type="number" size=1 style="text-align:right;">
+			&middot 10
+			<sup><input id="k_es3.1" type="number" size=3 style="text-align:left;"></sup>
+			<br><br>
+			Ordine di grandezza =
+			&middot 10
+			<sup><input id="o_es3.1" type="number" size=1 style="text-align:left;"></sup>
+			<br><br>
+
+			<a id="result_es3.1"> Risultato... </a>
+		</li>
+
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es3.2">4</a> </b>
+			<br>
+			<span class="fraction">
+				<a id="n1_es3.2" type="number"> 0 </a>
+				&middot
+				<a id="n2_es3.2" type="number"> 0 </a>
+				FracLine
+				<a id="d1_es3.2" type="number"> 0 </a>
+				&middot
+				<a id="d2_es3.2" type="number"> 0 </a>
+			</span>
+			=
+			<input id="a_es3.2" type="number" size=1 style="text-align:right;">
+			&middot 10
+			<sup><input id="k_es3.2" type="number" size=3 style="text-align:left;"></sup>
+			<br><br>
+			Ordine di grandezza =
+			&middot 10
+			<sup><input id="o_es3.2" type="number" size=1 style="text-align:left;"></sup>
+			<br><br>
+
+			<a id="result_es3.2"> Risultato... </a>
+		</li>
+	</ol>
+
+
+
+	<!--	
+		###########################		
+		########## ES. 4 ########## 
+		####### EQUIVALENZE #######
+		###########################
+	-->
+	<h2> Esercizio 4: </h2>	
+	<p> Eseguire le seguenti equivalenze. </p>
+	<p> <u><b>Nota bene:</b></u> Perché i punteggi siano assegnati completamente devono essere riportati i calcoli in bella copia di uno tra i sotto-esercizi 5, 6, 7, 8 e di almeno uno dei sotto-esercizi 9, 10. </p>
+	<ol>	
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es4.1">1</a> </b>
+			<br>
+			<a id="x_es4.1" type="number"> 0 </a>
+			<a id="unit_x_es4.1">kg</a><sup><a id="exp_es4.1"></a></sup>
+			=
+			<input id="y_es4.1" type="number" size=10 style="text-align:right;">
+			<a id="unit_y_es4.1">g</a><sup></sup>
+			<br>
+			<a id="result_es4.1"> Risultato... </a>
+		</li>
+		
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es4.2">1</a> </b>
+			<br>
+			<a id="x_es4.2" type="number"> 0 </a>
+			<a id="unit_x_es4.2">hg</a><sup><a id="exp_es4.2"></a></sup>
+			=
+			<input id="y_es4.2" type="number" size=10 style="text-align:right;">
+			<a id="unit_y_es4.2">dg</a><sup></sup>
+			<br>
+			<a id="result_es4.2"> Risultato... </a>
+		</li>
+
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es4.3">1</a> </b>
+			<br>
+			<a id="x_es4.3" type="number"> 0 </a>
+			<a id="unit_x_es4.3">cm</a><sup><a id="exp_es4.3"></a></sup>
+			=
+			<input id="y_es4.3" type="number" size=10 style="text-align:right;">
+			<a id="unit_y_es4.3">km</a><sup></sup>
+			<br>
+			<a id="result_es4.3"> Risultato... </a>
+		</li>
+
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es4.4">1</a> </b>
+			<br>
+			<a id="x_es4.4" type="number"> 0 </a>
+			<a id="unit_x_es4.4">hm</a><sup><a id="exp_es4.4"></a></sup>
+			=
+			<input id="y_es4.4" type="number" size=10 style="text-align:right;">
+			<a id="unit_y_es4.4">m</a><sup></sup>
+			<br>
+			<a id="result_es4.4"> Risultato... </a>
+		</li>
+		
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es4.5">2</a> </b>
+			<br>
+			<a id="x_es4.5" type="number"> 0 </a>
+			<a id="unit_x_es4.5">hm</a><sup><a id="exp_es4.5">2</a></sup>
+			=
+			<input id="y_es4.5" type="number" size=10 style="text-align:right;">
+			<a id="unit_y_es4.5">m</a><sup>2</sup>
+			<br>
+			<a id="result_es4.5"> Risultato... </a>
+		</li>
+
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es4.6">2</a> </b>
+			<br>
+			<a id="x_es4.6" type="number"> 0 </a>
+			<a id="unit_x_es4.6">dm</a><sup><a id="exp_es4.6">2</a></sup>
+			=
+			<input id="y_es4.6" type="number" size=10 style="text-align:right;">
+			<a id="unit_y_es4.6">dam</a><sup>2</sup>
+			<br>
+			<a id="result_es4.6"> Risultato... </a>
+		</li>
+
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es4.7">2</a> </b>
+			<br>
+			<a id="x_es4.7" type="number"> 0 </a>
+			<a id="unit_x_es4.7">cm</a><sup><a id="exp_es4.7">3</a></sup>
+			=
+			<input id="y_es4.7" type="number" size=10 style="text-align:right;">
+			<a id="unit_y_es4.7">m</a><sup>3</sup>
+			<br>
+			<a id="result_es4.7"> Risultato... </a>
+		</li>
+
+		<br>
+
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es4.8">2</a> </b>
+			<br>
+			<a id="x_es4.8" type="number"> 0 </a>
+			<a id="unit_x_es4.8">dm</a><sup><a id="exp_es4.8">3</a></sup>
+			=
+			<input id="y_es4.8" type="number" size=10 style="text-align:right;">
+			<a id="unit_y_es4.8">mm</a><sup>3</sup>
+			<br>
+			<a id="result_es4.8"> Risultato... </a>
+		</li>
+
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es4.9">2</a> </b>
+			<br>
+			<a id="x_es4.9" type="number"> 0 </a>
+			kg/m<sup>3</sup>
+			=
+			<input id="y_es4.9" type="number" size=10 style="text-align:right;">
+			g/cm<sup>3</sup>
+			<br>
+			<a id="result_es4.9"> Risultato... </a>
+		</li>
+		
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es4.10">2</a> </b>
+			<br>
+			<a id="x_es4.10" type="number"> 0 </a>
+			kg/m<sup>3</sup>
+			=
+			<input id="y_es4.10" type="number" size=10 style="text-align:right;">
+			kg/dm<sup>3</sup>
+			<br>
+			<a id="result_es4.10"> Risultato... </a>
+		</li>
+
+
+	</ol>
+
+
+</form>
+
+
+
+
+<br>
+<button type="button" onclick="alertConsegna()">Consegna compito</button>
+<!--<button type="button" onclick="generatePDF6();">Genera PDF</button> -->
+<!-- <button type="button" onclick="alertConsegna();">Consegna compito</button> -->
+
+<h3>
+Punteggio: <a id="points_tot">...</a> / <a id="points_avail">...</a>
+</h3>
+
+
+<h3>
+Controllo: <a id="control">0</a>
+</h3>
+
+<!--
+<script>
+document.writeln("ciao");
+prova = document.getElementById("result_es4.10").innerHTML;
+documents.writeln(prova);
+document.writeln("swssssss");
+</script>
+-->
+
+
+
+
+
+
+
+
+<script>
+
+$('.fraction').each(function(key, value) {
+    $this = $(this)
+    var split = $this.html().split("FracLine")
+    if( split.length == 2 ){
+        $this.html('<span class="top">'+split[0]+'</span><span class="bottom">'+split[1]+'</span>')
+    }    
+});
+
+assignDate();
+
+assignAll();
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

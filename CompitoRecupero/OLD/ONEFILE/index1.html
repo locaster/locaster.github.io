@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Compito di fisica</h2>
+
+
+
+
+
+
+<!-- DATA -->
+<p>
+	Data: <a id="date"></a>
+</p>
+<script>
+	n =  new Date();
+	y = n.getFullYear();
+	m = n.getMonth() + 1;
+	d = n.getDate();
+	document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
+</script>
+
+
+
+
+
+<form id="frm1" action="/action_page.php">
+	<!-- NOME E CONGNOME -->	
+	Nome:<input type="text" name="nome_input">
+	<br>
+	Cognome: <input type="text" name="cognome_input">
+	<br>
+	<a id="nome_disp"></a> <a id="cognome_disp"></a>	
+	<br>
+	<p id="nome_disp"></p>
+	
+	
+	<!-- ES. 1 -->
+	<h2> Esercizio 1: </h2>	
+	<p> Scrivere i seguenti numeri in notazione scintifica. </p>	
+	<ol>	
+		<li> Numeraccio = <input type="text" name="a1" size=10 style="text-align:right;">
+	 &middot 10<sup><input type="text" name="k1" size=3></sup> </li>
+		<li> Numeraccio = <input type="text" name="a2" size=10 style="text-align:right;">
+	&middot 10<sup><input type="text" name="k2" size=3></sup> </li>
+	</ol>	
+
+
+	<!-- ES. 2 -->
+	<h2>Esercizio 2:</h2>	
+	Eseguire le seguenti equivalenze.
+	<ol>	
+		<li> Numeraccio kg = <input type="text" name="eq1" size=20>
+	 mg </li>
+		<li> Numeraccio cm<sup>2</sup> = <input type="text" name="eq2" size=20>
+	m<sup>2</sup> </li>
+	</ol>	
+	<br><br>
+
+</form>
+
+
+
+
+<button type="button" onclick="myFunction()">Submit</button>
+
+
+<script>
+function myFunction() {
+	var nome, cognome;
+    
+	nome = document.getElementById("nome_input").innerHTML;
+	cognome = document.getElementById("cognome_input").innerHTML;
+	
+	document.writeln(nome)
+
+	document.getElementById("nome_disp").innerHTML = nome;
+	document.getElementById("cognome_disp").innerHTML = cognome;
+
+
+function randomAssignment()
+
+	var num, cs, pot, a, k1, k, x;	
+	
+	do{
+		num = 1 + 9*Math.random();
+	}while(num !== 10)
+	
+	cs = Math.round((maxSign-1)*Math.random());
+	pot = Math.pow(10,cs-1);	
+	a = Math.round(num*pot)/pot;
+	k1 = Math.round(5*Math.random());
+	sign = Math.random();
+	if(sign<0.5){
+	k=-k1;
+	x = a*(Math.pow(10,k));
+	
+	document.writeln(x)
+
+}
+</script>
+
+
+</body>
+</html>

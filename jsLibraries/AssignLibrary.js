@@ -86,10 +86,22 @@ function writeAndCriptoResult(pointsTotRealized,pointsTotAvail,id_pointsTotReali
 
 
 function randomAssignmentRangeK(id_num,max_sign,min_k,max_k){
-				
-	x = my_random_rangeK(max_sign,min_k,max_k);
+	
+	let cc = {}
+	let aa = {}
+	let kk = {}	
+	x = my_random_rangeK(max_sign,min_k,max_k,cc,aa,kk);
+	console.log(cc)
+	console.log(aa)
+	console.log(kk)
 
-	document.getElementById(id_num).innerHTML = x;		
+	n = cc["num_cifre_sign"] - (kk["exp_not_sci"]+1)
+	if(n<0){
+		n = 0
+	}
+	console.log(n)
+
+	document.getElementById(id_num).innerHTML = x.toFixed(n);		
 }
 
 
@@ -258,11 +270,23 @@ function randomAssignmenFrac5Let(id_NumSx_1,id_DenSx_1,id_NumDx_1,id_DenDx1_1,id
 
 function randomAssignmentRangeKSciNot(id_a,id_k,max_sign,min_k,max_k){
 	
-	x = my_random_rangeK(max_sign,min_k,max_k);
+	let cc = {};
+	let aa = {};
+	let kk = {};
+
+	x = my_random_rangeK(max_sign,min_k,max_k,cc,aa,kk);
+	console.log(cc);
+	console.log(aa);
+	console.log(kk);	
 	v = my_scinot(x);
 	a = v[0];
 	k = v[1];
-	document.getElementById(id_a).innerHTML = a;
+
+	n = cc["num_cifre_sign"] - 1;
+
+	console.log(n);
+
+	document.getElementById(id_a).innerHTML = a.toFixed(n);
 	document.getElementById(id_k).innerHTML = k;		
 }
 

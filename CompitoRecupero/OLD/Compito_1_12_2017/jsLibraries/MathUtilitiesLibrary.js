@@ -91,7 +91,7 @@ function my_random_rangeK_OLD(max_sign,max_k){
 	return x;		
 }
 
-function my_random_rangeK(max_sign,min_k,max_k, cc = {}, aa = {}, kk = {}){
+function my_random_rangeK(max_sign,min_k,max_k){
 	var a0, cs, pot, a, Dk, k0, k, x;	
 
 	do{
@@ -105,9 +105,6 @@ function my_random_rangeK(max_sign,min_k,max_k, cc = {}, aa = {}, kk = {}){
 	k0 = Math.round(Dk*Math.random());			
 	k = k0 + min_k;
 	x = a*(Math.pow(10,k));
-	cc["num_cifre_sign"] = c;
-	aa["a_not_sci"] = a;
-	kk["exp_not_sci"] = k;
 
 	/* TENTATIVO NON FUNZIONANTE DI RISOLVERE I PROBLEMI DI ARROTONDAMENTO.
 	x1 = x*Math.pow(10,-k+c-1);
@@ -122,8 +119,6 @@ function my_random_rangeK(max_sign,min_k,max_k, cc = {}, aa = {}, kk = {}){
 
 	return x;		
 }
-
-
 
 
 function my_random_rangeK_old(max_sign,min_k,max_k){

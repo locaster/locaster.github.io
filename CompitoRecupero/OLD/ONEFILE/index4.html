@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+<style>
+.fraction, .top, .bottom {
+    padding: 0 5px;    
+}
+
+.fraction {
+    display: inline-block;
+    text-align: center;    
+}
+
+.bottom{
+    border-top: 1px solid #000;
+    display: block;
+}
+</style>
+</head>
+
+
+
+
+<body>
+
+<h2>Compito di fisica</h2>
+
+
+<!--
+
+############# NOTE: #############
+
+- SONO QUI: Iniziare esercizi di equivalenze e dnesità.
+
+
+- DA FARE: La verifica dell'approssimazione ha un criterio sbagliato. Il calcolo dell'ordine di grandezza invece funziona.
+
+- DA FARE: Far stampare nome e risultati.
+
+- DA FARE: Preparare la pagina per la stampa.
+
+- DA FARE: Scrivere altri esercizi.
+
+- DA FARE: Controllare numeri random...
+
+- PROBLEMA: Viene dato risultato errato con 10^0 !!! Ora no..? Controlla!
+
+- MIGLIORIA: Evitare di fare il controllo sul uso molteplice del bottone "Verifica dei risultati" e impedire che si possa sottomettere più volte (verifica magari con  allert in js...
+
+- MIGLIORIA: Scrivere le frazioni usando Latex all'interno di HTML
+
+-->
+
+
+
+<!-- DATA -->
+<p>
+	Data: <a id="date"></a>
+</p>
+<script>
+	n =  new Date();
+	y = n.getFullYear();
+	m = n.getMonth() + 1;
+	d = n.getDate();
+	document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
+</script>
+
+
+
+
+
+<form id="frm1" action="/action_page.php">
+	<!--	
+		###########################		
+		###### NOME E COGNOME #####
+		###########################
+	-->
+	Nome:<input type="text" name="nome_input">
+	<br>
+	Cognome: <input type="text" name="cognome_input">
+	<br>
+	<a id="nome_disp"></a> <a id="cognome_disp"></a>	
+	<br>
+	<p id="nome_disp"></p>
+	
+	
+
+
+
+	<!--	
+		###########################		
+		########## ES. 1 ########## 
+		## NOTAZIONE SCIENTIFICA ##
+		###########################
+	-->
+	<h2> Esercizio 1: </h2>	
+	<p> Scrivere i seguenti numeri in notazione scintifica. </p>	
+	<ol>	
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es1.1">1</a> </b>
+			<br>
+			<a id="num_es1.1" type="number"> 0 </a>
+			=
+			<input id="a_es1.1" type="number" size=10 style="text-align:right;">
+			&middot 10
+			<sup><input id="k_es1.1" type="number"size=3></sup>
+			<br>
+			<a id="result_es1.1"> Risultato... </a>
+		</li>
+		
+		<br>		
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es1.2">1</a> </b>
+			<br>
+			<a id="num_es1.2" type="number"> 0 </a>
+			=
+			<input id="a_es1.2" type="number" size=10 style="text-align:right;">
+			&middot 10
+			<sup><input id="k_es1.2" type="number"size=3></sup>
+			<br>
+			<a id="result_es1.2"> Risultato... </a>
+		</li>
+
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es1.3">1</a> </b>
+			<br>
+			<a id="num_es1.3" type="number"> 0 </a>
+			=
+			<input id="a_es1.3" type="number" size=10 style="text-align:right;">
+			&middot 10
+			<sup><input id="k_es1.3" type="number"size=3></sup>
+			<br>
+			<a id="result_es1.3"> Risultato... </a>	
+		</li>
+		
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es1.4">1</a> </b>
+			<br>
+			<a id="num_es1.4" type="number"> 0 </a>
+			=
+			<input id="a_es1.4" type="number" size=10 style="text-align:right;">
+			&middot 10
+			<sup><input id="k_es1.4" type="number"size=3></sup>
+			<br>
+			<a id="result_es1.4"> Risultato... </a>	
+		</li>
+
+	</ol>
+	
+
+
+
+
+
+
+	<!--	
+		###########################		
+		########## ES. 2 ########## 
+		##### NOTAZIONE COMUNE ####
+		###########################
+	-->
+	<h2> Esercizio 2: </h2>	
+	<p> Scrivere i seguenti numeri in notazione comune. </p>	
+	<ol>	
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es2.1">1</a> </b>
+			<br>
+			<a id="a_es2.1" type="number"> 0 </a>
+			&middot 10
+			<sup><a id="k_es2.1" type="number"> 0 </a></sup>
+			=
+			<input id="x_es2.1" type="number" size=10 style="text-align:left;">
+			<br>
+			<a id="result_es2.1"> Risultato... </a>
+		</li>
+		
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es2.2">1</a> </b>
+			<br>
+			<a id="a_es2.2" type="number"> 0 </a>
+			&middot 10
+			<sup><a id="k_es2.2" type="number"> 0 </a></sup>
+			=
+			<input id="x_es2.2" type="number" size=10 style="text-align:left;">
+			<br>
+			<a id="result_es2.2"> Risultato... </a>
+		</li>
+		
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es2.3">1</a> </b>
+			<br>
+			<a id="a_es2.3" type="number"> 0 </a>
+			&middot 10
+			<sup><a id="k_es2.3" type="number"> 0 </a></sup>
+			=
+			<input id="x_es2.3" type="number" size=10 style="text-align:left;">
+			<br>
+			<a id="result_es2.3"> Risultato... </a>
+		</li>
+
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es2.4">1</a> </b>
+			<br>
+			<a id="a_es2.4" type="number"> 0 </a>
+			&middot 10
+			<sup><a id="k_es2.4" type="number"> 0 </a></sup>
+			=
+			<input id="x_es2.4" type="number" size=10 style="text-align:left;">
+			<br>
+			<a id="result_es2.4"> Risultato... </a>
+		</li>
+
+
+	</ol>
+
+
+
+
+
+
+	
+	<!--	
+		###########################		
+		########## ES. 3 ########## 
+		##### APPROSSIMAZIONI #####
+		###########################
+	-->
+	<br>
+	<h2> Esercizio 3: </h2>	
+	<p> Calcolare l'approssimazione a <u>una</u> cifra significativa (espressa in notazione scintifica) e l'ordine di grandezza delle seguenti espressioni numeriche senza ricorrere all'uso della clacolatrice.</p>
+	<p> <u><b>Nota bene:</b></u> Perché l'esercizio sia considerato corretto devono essere riportati i calcoli in bella copia tutti i calcoli. </p>	
+	<ol>	
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es3.1">4</a> </b>
+			<br>
+			<span class="fraction">
+				<a id="n1_es3.1" type="number"> 0 </a>
+				&middot
+				<a id="n2_es3.1" type="number"> 0 </a>
+				FracLine
+				<a id="d1_es3.1" type="number"> 0 </a>
+				&middot
+				<a id="d2_es3.1" type="number"> 0 </a>
+			</span>
+			=
+			<input id="a_es3.1" type="number" size=1 style="text-align:right;">
+			&middot 10
+			<sup><input id="k_es3.1" type="number" size=3 style="text-align:left;"></sup>
+			<br><br>
+			Ordine di grandezza =
+			&middot 10
+			<sup><input id="o_es3.1" type="number" size=1 style="text-align:left;"></sup>
+			<br><br>
+
+			<a id="result_es3.1"> Risultato... </a>
+		</li>
+
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es3.2">4</a> </b>
+			<br>
+			<span class="fraction">
+				<a id="n1_es3.2" type="number"> 0 </a>
+				&middot
+				<a id="n2_es3.2" type="number"> 0 </a>
+				FracLine
+				<a id="d1_es3.2" type="number"> 0 </a>
+				&middot
+				<a id="d2_es3.2" type="number"> 0 </a>
+			</span>
+			=
+			<input id="a_es3.2" type="number" size=1 style="text-align:right;">
+			&middot 10
+			<sup><input id="k_es3.2" type="number" size=3 style="text-align:left;"></sup>
+			<br><br>
+			Ordine di grandezza =
+			&middot 10
+			<sup><input id="o_es3.2" type="number" size=1 style="text-align:left;"></sup>
+			<br><br>
+
+			<a id="result_es3.2"> Risultato... </a>
+		</li>
+	</ol>
+
+
+
+	<!--	
+		###########################		
+		########## ES. 4 ########## 
+		####### EQUIVALENZE #######
+		###########################
+	-->
+	<h2> Esercizio 4: </h2>	
+	<p> Eseguire le seguenti equivalenze. </p>
+	<p> <u><b>Nota bene:</b></u> Perché i punteggi siano assegnati completamente devono essere riportati i calcoli in bella copia di uno tra i sotto-esercizi 5, 6, 7, 8 e di almeno uno dei sotto-esercizi 9, 10. </p>
+	<ol>	
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es4.1">1</a> </b>
+			<br>
+			<a id="x_es4.1" type="number"> 0 </a>
+			<a id="unit_x_es4.1">kg</a><sup><a id="exp_es4.1"></a></sup>
+			=
+			<input id="y_es4.1" type="number" size=10 style="text-align:right;">
+			<a id="unit_y_es4.1">g</a><sup></sup>
+			<br>
+			<a id="result_es4.1"> Risultato... </a>
+		</li>
+		
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es4.2">1</a> </b>
+			<br>
+			<a id="x_es4.2" type="number"> 0 </a>
+			<a id="unit_x_es4.2">hg</a><sup><a id="exp_es4.2"></a></sup>
+			=
+			<input id="y_es4.2" type="number" size=10 style="text-align:right;">
+			<a id="unit_y_es4.2">dg</a><sup></sup>
+			<br>
+			<a id="result_es4.2"> Risultato... </a>
+		</li>
+
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es4.3">1</a> </b>
+			<br>
+			<a id="x_es4.3" type="number"> 0 </a>
+			<a id="unit_x_es4.3">cm</a><sup><a id="exp_es4.3"></a></sup>
+			=
+			<input id="y_es4.3" type="number" size=10 style="text-align:right;">
+			<a id="unit_y_es4.3">km</a><sup></sup>
+			<br>
+			<a id="result_es4.3"> Risultato... </a>
+		</li>
+
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es4.4">1</a> </b>
+			<br>
+			<a id="x_es4.4" type="number"> 0 </a>
+			<a id="unit_x_es4.4">hm</a><sup><a id="exp_es4.4"></a></sup>
+			=
+			<input id="y_es4.4" type="number" size=10 style="text-align:right;">
+			<a id="unit_y_es4.4">m</a><sup></sup>
+			<br>
+			<a id="result_es4.4"> Risultato... </a>
+		</li>
+		
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es4.5">2</a> </b>
+			<br>
+			<a id="x_es4.5" type="number"> 0 </a>
+			<a id="unit_x_es4.5">hm</a><sup><a id="exp_es4.5">2</a></sup>
+			=
+			<input id="y_es4.5" type="number" size=10 style="text-align:right;">
+			<a id="unit_y_es4.5">m</a><sup>2</sup>
+			<br>
+			<a id="result_es4.5"> Risultato... </a>
+		</li>
+
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es4.6">2</a> </b>
+			<br>
+			<a id="x_es4.6" type="number"> 0 </a>
+			<a id="unit_x_es4.6">dm</a><sup><a id="exp_es4.6">2</a></sup>
+			=
+			<input id="y_es4.6" type="number" size=10 style="text-align:right;">
+			<a id="unit_y_es4.6">dam</a><sup>2</sup>
+			<br>
+			<a id="result_es4.6"> Risultato... </a>
+		</li>
+
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es4.7">2</a> </b>
+			<br>
+			<a id="x_es4.7" type="number"> 0 </a>
+			<a id="unit_x_es4.7">cm</a><sup><a id="exp_es4.7">3</a></sup>
+			=
+			<input id="y_es4.7" type="number" size=10 style="text-align:right;">
+			<a id="unit_y_es4.7">m</a><sup>3</sup>
+			<br>
+			<a id="result_es4.7"> Risultato... </a>
+		</li>
+
+		<br>
+
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es4.8">2</a> </b>
+			<br>
+			<a id="x_es4.8" type="number"> 0 </a>
+			<a id="unit_x_es4.8">dm</a><sup><a id="exp_es4.8">3</a></sup>
+			=
+			<input id="y_es4.8" type="number" size=10 style="text-align:right;">
+			<a id="unit_y_es4.8">mm</a><sup>3</sup>
+			<br>
+			<a id="result_es4.8"> Risultato... </a>
+		</li>
+
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es4.9">2</a> </b>
+			<br>
+			<a id="x_es4.9" type="number"> 0 </a>
+			kg/m<sup>3</sup>
+			=
+			<input id="y_es4.9" type="number" size=10 style="text-align:right;">
+			g/cm<sup>3</sup>
+			<br>
+			<a id="result_es4.9"> Risultato... </a>
+		</li>
+		
+		<br>
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es4.10">2</a> </b>
+			<br>
+			<a id="x_es4.10" type="number"> 0 </a>
+			kg/m<sup>3</sup>
+			=
+			<input id="y_es4.10" type="number" size=10 style="text-align:right;">
+			kg/dm<sup>3</sup>
+			<br>
+			<a id="result_es4.10"> Risultato... </a>
+		</li>
+
+
+	</ol>
+
+
+</form>
+
+<br>
+<button type="button" onclick="verifyAll()">Verifica dei risultati</button>
+
+<h3>
+Punteggio: <a id="points_tot">...</a> / <a id="points_avail">...</a>
+</h3>
+
+
+<h3>
+Controllo: <a id="control">0</a>
+</h3>
+
+
+
+
+
+
+
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+
+<script>
+$('.fraction').each(function(key, value) {
+    $this = $(this)
+    var split = $this.html().split("FracLine")
+    if( split.length == 2 ){
+        $this.html('<span class="top">'+split[0]+'</span><span class="bottom">'+split[1]+'</span>')
+    }    
+});
+</script>
+
+<script>
+		
+		assignAll();
+
+		function assignAll(){
+			/***********
+				SciNot
+			************/
+			randomAssignmentRangeK("num_es1.1",4,-6,6);
+			randomAssignmentRangeK("num_es1.2",4,-6,6);
+			randomAssignmentRangeK("num_es1.3",4,-6,6);
+			randomAssignmentRangeK("num_es1.4",4,-6,6);
+
+			/***********
+				ComNot
+			************/
+			randomAssignmentRangeKSciNot("a_es2.1","k_es2.1",4,-6,6);
+			randomAssignmentRangeKSciNot("a_es2.2","k_es2.2",4,-6,6);
+			randomAssignmentRangeKSciNot("a_es2.3","k_es2.3",4,-6,6);
+			randomAssignmentRangeKSciNot("a_es2.4","k_es2.4",4,-6,6);
+
+			/***********
+				Approx
+			************/
+			randomAssignmentRangeK("n1_es3.1",4,-6,6);
+			randomAssignmentRangeK("n2_es3.1",4,-6,6);
+			randomAssignmentRangeK("d1_es3.1",4,-6,6);
+			randomAssignmentRangeK("d2_es3.1",4,-6,6);
+
+			randomAssignmentRangeK("n1_es3.2",4,-6,6);
+			randomAssignmentRangeK("n2_es3.2",4,-6,6);
+			randomAssignmentRangeK("d1_es3.2",4,-6,6);
+			randomAssignmentRangeK("d2_es3.2",4,-6,6);
+
+			/***************
+				Conv Easy
+			****************/
+			randomAssignmentRangeK("x_es4.1",3,-1,0); // kg -> g
+			randomAssignmentRangeK("x_es4.2",3,-1,0); // hg -> mg
+			randomAssignmentRangeK("x_es4.3",3,3,4); // cm -> km
+			randomAssignmentRangeK("x_es4.4",3,-1,0); // hm -> m
+			randomAssignmentRangeK("x_es4.5",3,1,1); // hm2 -> m2
+			randomAssignmentRangeK("x_es4.6",3,2,3); // dm2 -> dam2
+			randomAssignmentRangeK("x_es4.7",3,5,6); // cm3 -> m3
+			randomAssignmentRangeK("x_es4.8",3,0,1); // dm3 -> mm3	
+			randomAssignmentRangeK("x_es4.9",3,2,3); // kg/m3 -> g/cm3
+			my_copy("x_es4.9","x_es4.10") // kg/m3 -> kg/dm3
+		}
+
+
+
+		function my_log10(x) {
+  			return Math.log(x) / Math.log(10);
+		}
+		
+		
+		// Arrotonda un numero x con dec cifre decimali.
+		function my_round(x,dec) {
+			pot = Math.pow(10,dec);
+			r = Math.round(x*pot)/pot;  			
+			return r;
+		}
+
+	
+		// Calcola a e k dell'espressione in notazione scientifica del numero x.
+		function my_scinot(x) {
+			k = Math.floor(my_log10(x));
+			a = Math.pow(10,my_log10(x)-k);
+			return [a,k];
+		}
+
+		// Calcola a e k dell'espressione in notazione scientifica del numero x.
+		function my_convTenPot(char) {
+			var x;
+			
+			if(char == "k"){
+				x = 3;
+			}else if(char == "h"){
+				x = 2;
+			}else if(char == "a"){
+				x = 1;
+			}else if(char == undefined){
+				x = 0;
+			}else if(char == "d"){
+				x = -1;
+			}else if(char == "c"){
+				x = -2;
+			}else if(char == "m"){
+				x = -3;
+			}
+
+			return x
+		}
+
+
+
+		function verifyAll(){
+			
+			var points_tot, points_avail, control;
+			
+			points_tot = 0;
+			points_avail = 0;
+			
+			/***********
+				SciNot
+			************/
+
+			result = verifySciNot("num_es1.1","a_es1.1","k_es1.1","result_es1.1","weight_es1.1");
+			points_tot += result[0];
+			points_avail += result[1];
+
+			result = verifySciNot("num_es1.2","a_es1.2","k_es1.2","result_es1.2","weight_es1.2");
+			points_tot += result[0];
+			points_avail += result[1];
+		
+			result = verifySciNot("num_es1.3","a_es1.3","k_es1.3","result_es1.3","weight_es1.3");
+			points_tot += result[0];
+			points_avail += result[1];
+
+			result = verifySciNot("num_es1.4","a_es1.4","k_es1.4","result_es1.4","weight_es1.4");
+			points_tot += result[0];
+			points_avail += result[1];
+				
+			result = verifyComNot("a_es2.1","k_es2.1","x_es2.1","result_es2.1","weight_es2.1");
+			points_tot += result[0];
+			points_avail += result[1];
+			
+			/***********
+				ComNot
+			************/
+
+			result = verifyComNot("a_es2.2","k_es2.2","x_es2.2","result_es2.2","weight_es2.2");
+			points_tot += result[0];
+			points_avail += result[1];
+			
+			result = verifyComNot("a_es2.3","k_es2.3","x_es2.3","result_es2.3","weight_es2.3");
+			points_tot += result[0];
+			points_avail += result[1];
+			
+			result = verifyComNot("a_es2.4","k_es2.4","x_es2.4","result_es2.4","weight_es2.4");
+			points_tot += result[0];
+			points_avail += result[1];
+
+			/***********
+				Approx
+			************/
+
+			result = verifyApprox("n1_es3.1","n2_es3.1","d1_es3.1","d2_es3.1","a_es3.1","k_es3.1","o_es3.1","result_es3.1","weight_es3.1");
+			points_tot += result[0];
+			points_avail += result[1];
+			
+			result = verifyApprox("n1_es3.2","n2_es3.2","d1_es3.2","d2_es3.2","a_es3.2","k_es3.2","o_es3.2","result_es3.2","weight_es3.2");
+			points_tot += result[0];
+			points_avail += result[1];
+
+			/***************
+				Conv Easy
+			****************/
+
+			result = verifyConv("unit_x_es4.1","x_es4.1","unit_y_es4.1","y_es4.1","exp_es4.1","result_es4.1","weight_es4.1");
+			points_tot += result[0];
+			points_avail += result[1];
+
+			result = verifyConv("unit_x_es4.2","x_es4.2","unit_y_es4.2","y_es4.2","exp_es4.2","result_es4.2","weight_es4.2");
+			points_tot += result[0];
+			points_avail += result[1];
+
+			result = verifyConv("unit_x_es4.3","x_es4.3","unit_y_es4.3","y_es4.3","exp_es4.3","result_es4.3","weight_es4.3");
+			points_tot += result[0];
+			points_avail += result[1];
+
+			result = verifyConv("unit_x_es4.4","x_es4.4","unit_y_es4.4","y_es4.4","exp_es4.4","result_es4.4","weight_es4.4");
+			points_tot += result[0];
+			points_avail += result[1];
+
+			result = verifyConv("unit_x_es4.5","x_es4.5","unit_y_es4.5","y_es4.5","exp_es4.5","result_es4.5","weight_es4.5");
+			points_tot += result[0];
+			points_avail += result[1];
+			
+			result = verifyConv("unit_x_es4.6","x_es4.6","unit_y_es4.6","y_es4.6","exp_es4.6","result_es4.6","weight_es4.6");
+			points_tot += result[0];
+			points_avail += result[1];
+			
+			result = verifyConv("unit_x_es4.7","x_es4.7","unit_y_es4.7","y_es4.7","exp_es4.7","result_es4.7","weight_es4.7");
+			points_tot += result[0];
+			points_avail += result[1];
+
+			result = verifyConv("unit_x_es4.8","x_es4.8","unit_y_es4.8","y_es4.8","exp_es4.8","result_es4.8","weight_es4.8");
+			points_tot += result[0];
+			points_avail += result[1];
+
+			/*******************
+				Conv Density
+			********************/
+
+			result = verifyConvDensity("x_es4.9","y_es4.9","result_es4.9","weight_es4.9")
+			points_tot += result[0];
+			points_avail += result[1];
+
+			result = verifyConvDensity("x_es4.10","y_es4.10","result_es4.10","weight_es4.10");
+			points_tot += result[0];
+			points_avail += result[1];
+
+			document.getElementById("points_tot").innerHTML = points_tot;
+			document.getElementById("points_avail").innerHTML = points_avail;
+
+			control_text = document.getElementById("control").innerHTML;
+			control = parseInt(control_text, 10);
+			control += 1;
+			document.getElementById("control").innerHTML = control;
+		}
+	
+		
+
+
+
+
+
+
+		function prova() {
+		    var num, a, k;
+
+    			num = document.getElementById("num1").innerHTML;
+			a = document.getElementById("a1").value;
+			k = document.getElementById("k1").value;
+			
+			document.writeln(num);
+			document.writeln(a);
+			document.writeln(k);
+
+		}
+
+		function prova2() {
+		    var num, a, k;
+
+    			
+			a = document.getElementById("a_es2.1").innerHTML;
+			k = document.getElementById("k_es2.1").innerHTML;
+			x = document.getElementById("x_es2.1").value;
+			
+			document.writeln(a);
+			document.writeln(k);
+			document.writeln(x);
+
+		}
+
+		
+		function my_copy(id_toCopy,id_toReplace) {
+		    var x, y;
+
+    			x = document.getElementById(id_toCopy).innerHTML;
+			y = x;
+			document.getElementById(id_toReplace).innerHTML = y;
+		}
+
+		
+		function my_random(cs,k){
+			var a0, cs, pot, a, k1, k, x;	
+		
+			do{
+				a = 1 + 9*Math.random();
+			}while(a === 10)
+			
+			a = my_round(a0,cs-1);
+			x = a*(Math.pow(10,k));
+		
+			return x;		
+		}
+
+
+		function my_random_rangeK_OLD(max_sign,max_k){
+			var a0, cs, pot, a, k0, k, x;	
+		
+			do{
+				a0 = 1 + 9*Math.random();
+			}while(a0 === 10)
+			
+			c = Math.round(1+Math.random()*(max_sign-1));
+			a = my_round(a0,c-1);
+			k0 = Math.round(max_k*Math.random());
+			sign_k = Math.random();
+			if(sign_k<0.5){
+				k=-k0;
+			}else{
+				k=k0;
+			}
+			x = a*(Math.pow(10,k));
+		
+			return x;		
+		}
+
+		function my_random_rangeK(max_sign,min_k,max_k){
+			var a0, cs, pot, a, Dk, k0, k, x;	
+		
+			do{
+				a0 = 1 + 9*Math.random();
+			}while(a0 === 10)
+			
+			c = Math.round(1+Math.random()*(max_sign-1));
+			a = my_round(a0,c-1);
+			Dk = max_k - min_k;
+			k0 = Math.round(Dk*Math.random());			
+			k = k0 + min_k;
+			x = a*(Math.pow(10,k));
+
+			//document.writeln(Dk);
+			//document.writeln(k0);
+			//document.writeln(min_k);
+			//document.writeln(k);		
+					
+			return x;		
+		}
+
+
+
+
+		function randomAssignmentRangeK(id_num,max_sign,min_k,max_k){
+						
+			x = my_random_rangeK(max_sign,min_k,max_k);
+		
+			document.getElementById(id_num).innerHTML = x;		
+		}
+
+
+		function randomAssignmentRangeKSciNot(id_a,id_k,max_sign,min_k,max_k){
+			
+			x = my_random_rangeK(max_sign,min_k,max_k);
+			v = my_scinot(x);
+			a = v[0];
+			k = v[1];
+			document.getElementById(id_a).innerHTML = a;
+			document.getElementById(id_k).innerHTML = k;		
+		}
+
+
+
+
+
+
+
+		function verifySciNot(id_num,id_a,id_k,id_result,id_weight) {
+		    var w_text, w, num, a, k, correct;
+			
+			w_text = document.getElementById(id_weight).innerHTML;
+			w = parseInt(w_text, 10);
+    			num = document.getElementById(id_num).innerHTML;
+			a = document.getElementById(id_a).value;
+			k = document.getElementById(id_k).value;
+			
+			
+
+			if (isNaN(num) || isNaN(a) || isNaN(k)){
+				text = "Input non valido";
+				correct = 0;
+			}else{
+				err = Math.abs( num - (a*Math.pow(10,k)) );
+				relErr = err/num;
+				if(relErr <= 0.1 && a<10 && a>=1){
+					text = "<span style='color:green'> Risultato corretto (dentro un errore relativo del 10%). </span>";
+					correct = 1;
+				}else{
+					text = "<span style='color:red'> Risultato errato (dentro un errore relativo del 10%). </span>";
+					correct = 0;
+				}
+
+			}
+			
+			document.getElementById(id_result).innerHTML = text;		
+			return [w*correct, w];
+		}
+
+
+			/*
+			a = document.getElementById("a_es2.1").innerHTML;
+			k = document.getElementById("k_es2.1").innerHTML;
+			x = document.getElementById("x_es2.1").value;
+			*/
+
+
+		
+
+		function verifyComNot(id_a,id_k,id_x,id_result,id_weight) {
+		    var w_text, w, num, a, k, correct;
+			
+			/*
+			document.writeln(id_a);
+			document.writeln(id_k);
+			document.writeln(id_x);
+			document.writeln(id_result);
+			document.writeln(id_weight);
+			*/
+
+			w_text = document.getElementById(id_weight).innerHTML;
+
+			w = parseInt(w_text, 10);
+			a = document.getElementById(id_a).innerHTML;
+			k = document.getElementById(id_k).innerHTML;
+			x = document.getElementById(id_x).value;
+			
+			/*
+			document.writeln(w);
+			document.writeln(a);
+			document.writeln(k);
+			document.writeln(x);
+			*/
+
+			if (isNaN(x) || isNaN(a) || isNaN(k)){
+				text = "Input non valido";
+				correct = 0;
+			}else{
+				err = Math.abs( x - (a*Math.pow(10,k)) );
+				relErr = err/x;
+				if(relErr <= 0.1){
+					text = "<span style='color:green'> Risultato corretto (dentro un errore relativo del 10%). </span>";
+					correct = 1;
+				}else{
+					text = "<span style='color:red'> Risultato errato (dentro un errore relativo del 10%). </span>";
+					correct = 0;
+				}
+
+			}
+			
+			document.getElementById(id_result).innerHTML = text;		
+			return [w*correct, w];
+		}
+
+
+
+
+
+	
+		function verifyApprox(id_n1,id_n2,id_d1,id_d2,id_a,id_k,id_o,id_result,id_weight) {
+		    var w_text, w, num, a, k, correct, correct_approx, correct_order, flag_approx, flag_order;
+			
+			// Frazioni di punteggio per approssimazione e ordine corretti:
+			correct_approx = .5;
+			correct_order = .5;
+	
+			correct = 0;
+			flag_approx = 0;
+			flag_order = 0;
+
+			
+			
+			w_text = document.getElementById(id_weight).innerHTML;
+			w = parseInt(w_text, 10);
+			n1 = document.getElementById(id_n1).innerHTML;
+			n2 = document.getElementById(id_n2).innerHTML;
+			d1 = document.getElementById(id_d1).innerHTML;
+			d2 = document.getElementById(id_d2).innerHTML;			
+			a = document.getElementById(id_a).value;		
+			k = document.getElementById(id_k).value;
+			o = document.getElementById(id_o).value;
+			
+			/*
+			document.writeln(w);
+			document.writeln(n1);
+			document.writeln(n2);
+			document.writeln(d1);
+			document.writeln(d2);
+			document.writeln(a);
+			document.writeln(k);
+			document.writeln(o);
+			*/
+				
+			if(isNaN(n1) || isNaN(n2) ||isNaN(d1) || isNaN(d2) || isNaN(o) || isNaN(a) || isNaN(k)){
+				text = "Input non valido.";
+				correct = 0;
+			}else{
+				x = (n1*n2)/(d1*d2);		
+				v = my_scinot(x);
+				A = v[0];
+				K = v[1];
+			
+				//document.writeln(A);
+				//document.writeln(K); 
+
+				A_approx = Math.round(A);
+				K_approx = K;
+			
+			
+			
+				if( A >= 1 && A < 5 ){
+					O = K;
+				}else if( A > 5 && A < 10 ){
+					O = K+1;			
+					if(Math.round(A) == 10){
+						A_approx = 1;
+						K_approx = O; 
+					}
+				}
+			
+			
+				if(A_approx==1){
+					if( (a >= 1 && a <= 2 && k==K_approx) || (a == 9 && k==K_approx-1) ){
+						flag_approx ++;
+					}
+				}else if(A_approx==9){
+					if( (a >= 8 && a <= 9 && k==K_approx) || (a == 1 && k==K_approx+1) ){
+						flag_approx ++;
+					} 		
+				}else{
+					if(a >= A_approx-1 && a <= A_approx+1 && k==K_approx){
+						flag_approx ++;
+					}
+				}
+				/*
+				document.writeln(x);
+				document.writeln(K);
+				document.writeln(A);
+				document.writeln(A_approx);
+				document.writeln(K_approx);
+				*/
+
+				if(o==O){
+					flag_order ++;
+				}
+
+
+				text = "Valore numerico esatto = " + x + "<br>" + "Ordine di grandezza = " + O;
+			
+				//text = text + "<br>" + "A_approx = " + A_approx + "<br>" + "K_approx = " + K_approx + "<br>" + "O = " + O + "<br>";
+			
+				if(flag_approx==0){
+					text = text + "<br>" + "<span style='color:red;'> Approssimazione errata. </span>";
+				}else if(flag_approx==1){
+					text = text + "<br>" + "<span style='color:green;'> Approssimazione corretta. </span>";
+					correct += correct_approx;
+				}if(flag_order==0){
+					text = text + "<span style='color:red;'> Ordine di grandezza errato. </span>";
+				}else if(flag_order==1){
+					text = text + "<span style='color:green;'> Ordine di grandezza corretto. </span>";
+					correct += correct_order;
+				}
+				//document.writeln(text);
+				document.getElementById(id_result).innerHTML = text;
+			
+				return [w*correct, w];		
+	
+
+			}
+	}
+
+
+
+
+	function verifyConv(id_unit_x,id_x,id_unit_y,id_y,id_exp,id_result,id_weight) {
+		    var w_text, w, stringa, v, correct;
+			
+			/*
+			document.writeln(id_unit_x);
+			document.writeln(id_x);
+			document.writeln(id_unit_y);
+			document.writeln(id_y);
+			document.writeln(id_result);
+			document.writeln(id_weight);
+			*/
+
+			w_text = document.getElementById(id_weight).innerHTML;
+
+			w = parseInt(w_text, 10);
+			unit_x = document.getElementById(id_unit_x).innerHTML;
+			unit_y = document.getElementById(id_unit_y).innerHTML;
+			x = document.getElementById(id_x).innerHTML;
+			e = document.getElementById(id_exp).innerHTML;
+			y = document.getElementById(id_y).value;
+			
+			if(e=="") e=1;
+
+			/*
+			document.writeln(w);
+			document.writeln(unit_x);
+			document.writeln(unit_y);
+			document.writeln(x);
+			document.writeln(y);
+			*/
+			
+			v_x = unit_x.split("");
+			pot_x = my_convTenPot(v_x[v_x.length-2]);
+			v_y = unit_y.split("");
+			pot_y = my_convTenPot(v_y[v_y.length-2]);
+			//document.writeln(pot_x);
+			//document.writeln(pot_y);
+
+			//document.writeln(pot_x);
+			//document.writeln(pot_y);
+			ConvFact = Math.pow(10,e*(pot_x-pot_y));
+			//document.writeln(ConvFact);
+
+			if (isNaN(y)){
+				text = "Input non valido";
+				correct = 0;
+			}else{
+				err = Math.abs( y - x*ConvFact );
+				relErr = err/y;
+				//document.writeln(relErr);
+				if(relErr <= 0.1){
+					text = "<span style='color:green'> Risultato corretto (dentro un errore relativo del 10%). </span>";
+					correct = 1;
+				}else{
+					text = "<span style='color:red'> Risultato errato (dentro un errore relativo del 10%). </span>";
+					correct = 0;
+				}
+
+			}
+			
+			//document.writeln(w*correct);
+			//document.writeln(w);
+
+			document.getElementById(id_result).innerHTML = text;		
+			return [w*correct, w];
+
+		}
+
+		
+
+
+
+		function verifyConvDensity(id_x,id_y,id_result,id_weight) {
+		    var w_text, w, stringa, v, correct;
+			
+			
+			w_text = document.getElementById(id_weight).innerHTML;
+
+			w = parseInt(w_text, 10);
+			x = document.getElementById(id_x).innerHTML;
+			y = document.getElementById(id_y).value;
+
+			//document.writeln("ciao");
+			
+
+			ConvFact = 0.001;
+		
+			if (isNaN(y)){
+				text = "Input non valido";
+				correct = 0;
+			}else{
+				err = Math.abs( y - x*ConvFact );
+				relErr = err/y;
+				if(relErr <= 0.1){
+					text = "<span style='color:green'> Risultato corretto (dentro un errore relativo del 10%). </span>";
+					correct = 1;
+				}else{
+					text = "<span style='color:red'> Risultato errato (dentro un errore relativo del 10%). </span>";
+					correct = 0;
+				}
+
+			}
+			
+			document.getElementById(id_result).innerHTML = text;		
+			return [w*correct, w];
+
+		}
+
+
+
+		
+	
+</script>
+
+
+</body>
+</html>

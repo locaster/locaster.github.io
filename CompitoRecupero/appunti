@@ -1,0 +1,51 @@
+<!--	
+		###########################		
+		###### NOME E COGNOME #####
+		###########################
+	-->
+	Nome:<input type="text" id="nome_input">
+	<span style="display:inline-block; width: 10px;"></span>	
+	Cognome: <input type="text" id="cognome_input">
+	<span style="display:inline-block; width: 10px;"></span>
+	Classe:<input type="text" id="classe_input">
+	<br>
+	Nome:<span style="display:inline-block;" id="nome_disp"></span>
+	<span style="display:inline-block; width: 10px;"></span>	
+	Cognome: <span style="display:inline-block;" id="cognome_disp"></span>
+	<span style="display:inline-block; width: 10px;"></span>
+	Classe:<span style="display:inline-block;" id="classe_disp"></span>
+
+
+
+<script>
+	//dentro verifyAll() in AssignVerify.js inserire	
+	ReadPrintAnagraph("nome_input","cognome_input","classe_input","nome_disp","cognome_disp","classe_disp")
+
+
+	
+	//in AssignVerifyLibrary.js inserire	
+	/*****************************************
+	******* LETTURA E STAMPA ANAGRAFICA ******
+	******************************************/		
+
+function ReadPrintAnagraph(id_nome_input,id_cognome_input,id_classe_input,id_nome_disp,id_cognome_disp,id_classe_disp){
+	document.writeln(id_nome_input);
+	document.writeln(id_cognome_input);
+	document.writeln(id_classe_input);
+	document.writeln("lllllllllllllllllll");
+
+	var nome cognome classe;
+
+	nome = document.getElementById(id_nome_input).value; // 	NON FUNZIONA DA QUA!!!!!!!!!!!!!
+	document.writeln("ciao");
+	document.writeln(nome);	
+	//cognome = document.getElementById(id_cognome_input).innerHTML;
+	//classe = document.getElementById(id_clsse_input).innerHTML;
+
+	document.writeln("kkkkkkkkkkkkk");
+	//document.getElementById(id_nome_disp).innerHTML = nome;
+	//cognome = document.getElementById(id_cognome_disp).innerHTML = congome;
+	//classe = document.getElementById(id_clsse_disp).innerHTML = classe;	
+}
+
+</script>
