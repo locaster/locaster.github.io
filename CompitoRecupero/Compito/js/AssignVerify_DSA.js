@@ -18,19 +18,23 @@ function assignAll(){
 		SciNot
 	************/
 	randomAssignmentRangeK("num_es1.1",4,-6,6);
+	randomAssignmentRangeK("num_es1.2",4,-6,6);
+	randomAssignmentRangeK("num_es1.3",4,-6,6);
 	
 	/***********
 		ComNot
 	************/
 	randomAssignmentRangeKSciNot("a_es2.1","k_es2.1",4,-6,6);
+	randomAssignmentRangeKSciNot("a_es2.2","k_es2.2",4,-6,6);
+	randomAssignmentRangeKSciNot("a_es2.3","k_es2.3",4,-6,6);
 
 	/***********
 		Approx
 	************/
-	randomAssignmentRangeK("n1_es3.1",4,-6,6);
-	randomAssignmentRangeK("n2_es3.1",4,-6,6);
-	randomAssignmentRangeK("d1_es3.1",4,-6,6);
-	randomAssignmentRangeK("d2_es3.1",4,-6,6);
+	//randomAssignmentRangeK("n1_es3.1",4,-6,6);
+	//randomAssignmentRangeK("n2_es3.1",4,-6,6);
+	//randomAssignmentRangeK("d1_es3.1",4,-6,6);
+	//randomAssignmentRangeK("d2_es3.1",4,-6,6);
 
 	/***************
 		Conv Easy
@@ -55,7 +59,7 @@ function assignAll(){
 	/********************
 		Formule inverse
 	*********************/
-	randomAssignmenFrac5Let("NumSx_1","DenSx_1","NumDx_1","DenDx1_1","DenDx2_1","NumSx_2","DenSx_2","NumDx_2","DenDx1_2","DenDx2_2");
+	randomAssignmenFrac4Let("NumSx_1","DenSx_1","NumDx_1","DenDx_1","NumSx_2","DenSx_2","NumDx_2","DenDx_2");
 
 	/********************
 		Densità r_cilindro
@@ -84,11 +88,27 @@ function verifyAll(){
 	pointsTotRealized += result[0];
 	pointsTotAvail += result[1];
 
+	result = verifySciNot("num_es1.2","a_es1.2","k_es1.2","result_es1.2","weight_es1.2");
+	pointsTotRealized += result[0];
+	pointsTotAvail += result[1];
+
+	result = verifySciNot("num_es1.3","a_es1.3","k_es1.3","result_es1.3","weight_es1.3");
+	pointsTotRealized += result[0];
+	pointsTotAvail += result[1];
+
 		
 	/***********
 		ComNot
 	************/
 	result = verifyComNot("a_es2.1","k_es2.1","x_es2.1","result_es2.1","weight_es2.1");
+	pointsTotRealized += result[0];
+	pointsTotAvail += result[1];
+
+	result = verifyComNot("a_es2.2","k_es2.2","x_es2.2","result_es2.2","weight_es2.2");
+	pointsTotRealized += result[0];
+	pointsTotAvail += result[1];
+
+	result = verifyComNot("a_es2.3","k_es2.3","x_es2.3","result_es2.3","weight_es2.3");
 	pointsTotRealized += result[0];
 	pointsTotAvail += result[1];
 	
@@ -140,7 +160,7 @@ function verifyAll(){
 	/**********************
 		Formule inverse
 	***********************/
-	result = verifyInvFormula5("NumSx_1","DenSx_1","NumDx_1","DenDx1_1","DenDx2_1","result_0_Num","result_0_Den","result_1_Num","result_1_Den","result_2_Num","result_2_Den","result_3_Num","result_3_Den","result_4_Num","result_4_Den","result_es7","pointsAvail_es7","points_es7")	
+	result = verifyInvFormula4("NumSx_1","DenSx_1","NumDx_1","DenDx_1","result_0_Num","result_0_Den","result_1_Num","result_1_Den","result_2_Num","result_2_Den","result_3_Num","result_3_Den","result_es5","pointsAvail_es5","points_es5")	
 	pointsTotRealized += result[0];
 	pointsTotAvail += result[1];
 

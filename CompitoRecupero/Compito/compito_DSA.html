@@ -62,7 +62,7 @@
 <script src="../../jsLibraries/AssignLibrary.js"></script>
 <script src="../../jsLibraries/VerifyLibrary.js"></script>
 <!--<script src="jsLibraries/math.js"></script>-->
-<script src="js/AssignVerify.js"></script>
+<script src="js/AssignVerify_DSA.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
 
 
@@ -224,6 +224,30 @@
 			<br>
 			<a id="result_es1.1"> Risultato... </a>
 		</li>
+
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es1.2">2</a> </b>
+			<br>
+			<a id="num_es1.2" type="number"> 0 </a>
+			=
+			<input id="a_es1.2" type="number" size=10 style="text-align:right;">
+			&middot 10
+			<sup><input id="k_es1.2" type="number"size=3></sup>
+			<br>
+			<a id="result_es1.2"> Risultato... </a>
+		</li>
+
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es1.3">2</a> </b>
+			<br>
+			<a id="num_es1.3" type="number"> 0 </a>
+			=
+			<input id="a_es1.3" type="number" size=10 style="text-align:right;">
+			&middot 10
+			<sup><input id="k_es1.3" type="number"size=3></sup>
+			<br>
+			<a id="result_es1.3"> Risultato... </a>
+		</li>
 		
 	</ol>
 	
@@ -254,6 +278,30 @@
 			<a id="result_es2.1"> Risultato... </a>
 		</li>
 
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es2.2">2</a> </b>
+			<br>
+			<a id="a_es2.2" type="number"> 0 </a>
+			&middot 10
+			<sup><a id="k_es2.2" type="number"> 0 </a></sup>
+			=
+			<input id="x_es2.2" type="number" size=10 style="text-align:left;">
+			<br>
+			<a id="result_es2.2"> Risultato... </a>
+		</li>
+
+		<li>
+			<b style="color:#800000;"> Peso esercizio = <a id="weight_es2.3">2</a> </b>
+			<br>
+			<a id="a_es2.3" type="number"> 0 </a>
+			&middot 10
+			<sup><a id="k_es2.3" type="number"> 0 </a></sup>
+			=
+			<input id="x_es2.3" type="number" size=10 style="text-align:left;">
+			<br>
+			<a id="result_es2.3"> Risultato... </a>
+		</li>
+
 	</ol>
 
 
@@ -262,43 +310,7 @@
 
 
 	
-	<!--	
-		###########################		
-		########## ES. 3 ########## 
-		##### APPROSSIMAZIONI #####
-		###########################
-	-->
-	<br>
-	<h2> Esercizio 3: </h2>	
-	<p> Calcolare l'approssimazione a <u>una</u> cifra significativa (espressa in notazione scintifica) e l'ordine di grandezza delle seguenti espressioni numeriche senza ricorrere all'uso della clacolatrice.</p>
-	<p> <u><b>Nota bene:</b></u> Perché l'esercizio sia considerato corretto devono essere riportati i calcoli in bella copia tutti i calcoli. </p>	
-	<ol>	
-		<li>
-			<b style="color:#800000;"> Peso esercizio = <a id="weight_es3.1">8</a> </b>
-			<br>
-			<span class="fraction">
-				<a id="n1_es3.1" type="number"> 0 </a>
-				&middot
-				<a id="n2_es3.1" type="number"> 0 </a>
-				FracLine
-				<a id="d1_es3.1" type="number"> 0 </a>
-				&middot
-				<a id="d2_es3.1" type="number"> 0 </a>
-			</span>
-			=
-			<input id="a_es3.1" type="number" size=1 style="text-align:right;">
-			&middot 10
-			<sup><input id="k_es3.1" type="number" size=3 style="text-align:left;"></sup>
-			<br><br>
-			Ordine di grandezza =
-			&middot 10
-			<sup><input id="o_es3.1" type="number" size=1 style="text-align:left;"></sup>
-			<br><br>
-
-			<a id="result_es3.1"> Risultato... </a>
-		</li>
-
-	</ol>
+	
 
 
 
@@ -467,7 +479,7 @@
 	<br>	
 	<h2> Esercizio 7: </h2>	
 
-	<b style="color:#800000;"> Punti disponibili: <a id="pointsAvail_es7">10</a> </b>	
+	<b style="color:#800000;"> Punti disponibili: <a id="pointsAvail_es7">8</a> </b>	
 	<br>
 	<b style="color:#800000;"> Punti totalizzati: <a id="points_es7"></a> </b>	
 
@@ -484,7 +496,7 @@
 	<sub><span class="fraction">
 		<a id="NumDx_1" type="text"></a>
 		FracLine
-		<a id="DenDx1_1" type="text"></a> &middot <a id="DenDx2_1" type="text"></a>
+		<a id="DenDx_1" type="text"></a>
 	</span></sub>
 
 	<p>
@@ -534,7 +546,7 @@
 	<span style="display:inline-block; width: 30px;"></span>
 
 	<sup>
-		<a id="DenDx1_2" type="text"></a>
+		<a id="DenDx_2" type="text"></a>
 		=
 	</sup>
 	<sub>
@@ -542,20 +554,6 @@
 			<input id="result_3_Num" type="text" size=5 style="text-align:left;">
 			FracLine
 			<input id="result_3_Den" type="text" size=5 style="text-align:left;">
-		</span>		
-	</sub>
-
-	<span style="display:inline-block; width: 30px;"></span>
-
-	<sup>
-		<a id="DenDx2_2" type="text"></a>
-		=
-	</sup>
-	<sub>
-		<span class="fraction">
-			<input id="result_4_Num" type="text" size=5 style="text-align:left;">
-			FracLine
-			<input id="result_4_Den" type="text" size=5 style="text-align:left;">
 		</span>		
 	</sub>
 
@@ -569,29 +567,6 @@
 
 
 
-	<!--	
-	###########################		
-	########## ES. 8 ########## 
-	# DENSITA: volume, unità ##
-	###########################
-	-->
-	<br>	
-	<h2> Esercizio 8: </h2>	
-
-	<b style="color:#800000;"> Punti disponibili: <a id="pointsAvail_es8">3</a> </b>	
-	<br>
-	<b style="color:#800000;"> Punti totalizzati: <a id="points_es8"></a> </b>	
-
-	<p>
-		Un oggetto in <a id="material_es8_1" type="text">MATERIALE</a> ha forma cilindrica e raggio dell'area di base che misura <a id="r_es8" type="number">0</a> mm. La sua massa vale <a id="m_es8" type="number">0</a> g. Quanto misura l'altezza cilindro? Ricordiamo che la densità del <a id="material_es8_2" type="text">MATERIALE</a> è di <a id="d_es8" type="number">0</a> kg/m<sup>3</sup>.
-	</p>
-
-	h =
-	<input id="ans_hMM_es8" type="number" size=10 style="text-align:right;">
-	mm.
-
-	<br><br>
-	<span id="result_es8"></span>
 
 	
 </form>
