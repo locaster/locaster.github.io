@@ -112,12 +112,7 @@ function verifyAll(){
 	pointsTotRealized += result[0];
 	pointsTotAvail += result[1];
 	
-	/***********
-		Approx
-	************/
-	result = verifyApprox("n1_es3.1","n2_es3.1","d1_es3.1","d2_es3.1","a_es3.1","k_es3.1","o_es3.1","result_es3.1","weight_es3.1");
-	pointsTotRealized += result[0];
-	pointsTotAvail += result[1];
+	
 	
 	
 
@@ -164,14 +159,7 @@ function verifyAll(){
 	pointsTotRealized += result[0];
 	pointsTotAvail += result[1];
 
-	/**********************
-		Densità h cilindro
-	***********************/
-	result = verifyDensityHcilinder("d_es8","m_es8","r_es8","ans_hMM_es8","result_es8","pointsAvail_es8","points_es8");
-	       //  verifyDensityHcilinder(id_density,id_mass,id_r,id_ans_hCM,id_result,id_pointsAvail,id_points)
-	pointsTotRealized += result[0];
-	pointsTotAvail += result[1];
-
+	
 	
 	console.log(pointsTotRealized)
 	console.log(pointsTotAvail)
