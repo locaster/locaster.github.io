@@ -1,0 +1,4 @@
+- Migliorare la correzione degli esercizi sulla densità con i vari casi di combinazioni di cose giuste.
+- Far scrivere punti dispopnibili e punti realizzati nel compito numeri e nella prima parte del compito di recupero come nel compito densità.
+- Pensare meglio alla correzione dell'ordine di grandezza.
+
